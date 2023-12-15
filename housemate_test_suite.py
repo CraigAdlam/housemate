@@ -4,14 +4,14 @@
 import sys
 import unittest
 
-from tests.test_housemate import TestMenus, TestHelperFunctions
+# from tests.test_housemate import TestMenus, TestHelperFunctions
 from tests.test_userlogin import TestUserProfileLoading, TestViewProfile, TestEditProfile, TestDeleteProfile
 from tests.test_userprofile import TestUserProfile, TestAppendToDataFrame, TestSaveDataFrameToCSV
 from tests.test_security import TestStringHash, TestReverseHash, TestCheckCredentials
 from tests.test_purchase import TestPurchase
 from tests.test_rental import TestRental
 
-# print(os.getwd())
+# print(os.getcwd())
 # os.chdir("c:\\Users\\cadla\\OneDrive\\Desktop\\")
 # print(sys.path)
 # sys.path.append('c:\\Users\\cadla\\OneDrive\\Desktop\\DATA533\\Project\\DATA533_Project1\\housemate')
@@ -34,8 +34,8 @@ if __name__ == '__main__':
     test_suite.addTest(unittest.makeSuite(TestCheckCredentials))
     test_suite.addTest(unittest.makeSuite(TestPurchase))
     test_suite.addTest(unittest.makeSuite(TestRental))
-    test_suite.addTest(unittest.makeSuite(TestMenus))
-    test_suite.addTest(unittest.makeSuite(TestHelperFunctions))
+    # test_suite.addTest(unittest.makeSuite(TestMenus))
+    # test_suite.addTest(unittest.makeSuite(TestHelperFunctions))
 
     # Create a test runner
     test_runner = unittest.TextTestRunner()

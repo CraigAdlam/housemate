@@ -5,8 +5,8 @@ import sys
 import io
 import random
 
-from housemate.src.housemate.property.property import Property
-from housemate.src.housemate.property.rental import (
+from src.housemate.property.property import Property
+from src.housemate.property.rental import (
     Rental,
     RentalCondo,
     RentalTownHome,
