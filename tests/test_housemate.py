@@ -11,7 +11,7 @@ import pandas as pd
 import random
 
 
-from src.housemate_app.housemate import (
+from housemate.housemate import (
     main_menu,
     profile_menu,
     housemate_menu,
