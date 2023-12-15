@@ -1,6 +1,8 @@
-from .property import Property
+# purchase.py module
+
 import random
 
+from .property import Property
 
 class Purchase(Property):
     def __init__(self, sqft, num_beds, num_baths, price, mortgage_term=25, interest=0.072):

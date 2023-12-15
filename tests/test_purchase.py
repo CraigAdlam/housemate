@@ -1,10 +1,12 @@
+# test_purchase.py module
+
 import unittest
 import sys
 import io
 import random
 
-from property.property import Property
-from property.purchase import (
+from housemate.src.housemate.property.property import Property
+from housemate.src.housemate.property.purchase import (
     Purchase,
     Condo,
     TownHome,

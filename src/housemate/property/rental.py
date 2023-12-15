@@ -1,6 +1,8 @@
-from .property import Property
+# rental.py module
+
 import random
 
+from .property import Property
 
 class Rental(Property):
     def __init__(self, sqft, num_beds, num_baths, rent, utilities, lease_term=12, pet=False):
