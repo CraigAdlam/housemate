@@ -3,18 +3,18 @@
 import os
 import pandas as pd
 
-from src.housemate_app.user.security import string_hash, reverse_hash, check_credentials
-from src.housemate_app.user.userprofile import (
+from housemate_app.user.security import string_hash, reverse_hash, check_credentials
+from housemate_app.user.userprofile import (
 #    UserProfile,
     load_user_profiles,
     create_profile_from_input,
     append_to_dataframe,
     save_dataframe_to_csv
 )
-from src.housemate_app.user.userlogin import view_profile, edit_profile, delete_profile
+from housemate_app.user.userlogin import view_profile, edit_profile, delete_profile
 
-from src.housemate_app.my_property.property import Property
-from src.housemate_app.my_property.purchase import (
+from housemate_app.my_property.property import Property
+from housemate_app.my_property.purchase import (
     Purchase, 
     Condo,
     TownHome,
@@ -26,7 +26,7 @@ from src.housemate_app.my_property.purchase import (
     view_purchase_list,
     purchase_recommendation
 )
-from src.housemate_app.my_property.rental import (
+from housemate_app.my_property.rental import (
     Rental,
     RentalCondo,
     RentalTownHome,
