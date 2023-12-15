@@ -1,6 +1,14 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8" 
+  - "3.9"
+
+# Command to install dependencies
+install: 
+  - pip install pandas 
+
+# Command to run tests
 script:
   - python housemate_test_suite.py

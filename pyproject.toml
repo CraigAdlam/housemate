@@ -3,14 +3,15 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "myCalculatorPackage"
-version = "0.0.2"
+name = "HouseMate"
+version = "0.0.1"
 authors = [
-  { name="Khalad Hasan", email="khalad.hasan@gmail.com" },
+  { name="Andrew Sarracini", email="andrewsarracini1@gmail.com" },
+  { name="Craig Adlam", email="cadlam87@gmail.com"}
 ]
-description = "An example package"
+description = "HouseMate is tool intended guide users through the challenging task of potential home ownership." 
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.6"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -18,5 +19,4 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/khalad-hasan/myCalculatorPackage"
-Issues = "https://github.com/khalad-hasan/myCalculatorPackage/issues"
+Homepage = "https://github.com/CraigAdlam/housemate"
