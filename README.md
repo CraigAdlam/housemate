@@ -1,7 +1,7 @@
 # HouseMate
 
 #### Build Stamp: 
-![https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main)
+![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main)
 
 The HouseMate package has 2 sub-packages, which are user and property. The user sub-package contains 3 modules; userprofile.py, userlogin.py and security.py, while the property sub-package also contains 3 modules; property.py, purchase.py and rental.py. Finally, there is a standalone module called housemate.py which imports all the modules and houses the logic to make the various menus and functions flow correctly. 
 
@@ -123,3 +123,7 @@ There are many functions within housemate.py that allow for flow including:
    - `purchase_main`, `rental_main`, `purchase_recommendation_main`, `renatl_recommendation_main`
  
 - Also note, housemate.py protects against all user input from invalid characters and character lengths. In the case of email, only a certain pattern will be accepted ("example@email.com")
+
+## Coverage: 
+
+![Coverage Screenshot](Coverage_screenshots/housemate_coverage_screenshot.png)
