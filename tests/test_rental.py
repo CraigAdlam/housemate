@@ -1,10 +1,12 @@
+# test_rental.py module
+
 import unittest
 import sys
 import io
 import random
 
-from property.property import Property
-from property.rental import (
+from housemate.src.housemate.property.property import Property
+from housemate.src.housemate.property.rental import (
     Rental,
     RentalCondo,
     RentalTownHome,

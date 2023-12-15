@@ -1,8 +1,8 @@
+# property.py module
+
 import random
 
 # Superclass Property
-
-
 class Property(object):
     def __init__(self, sqft, num_beds, num_baths):
         self.sqft = sqft
