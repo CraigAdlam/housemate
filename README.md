@@ -126,4 +126,4 @@ There are many functions within housemate.py that allow for flow including:
 
 ## Coverage: 
 
-![Coverage Screenshot]([Coverage_screenshots/housemate_coverage_screenshot.png](https://github.com/CraigAdlam/housemate/blob/main/Coverage_screenshots/housemate_coverage_screenshot.png)https://github.com/CraigAdlam/housemate/blob/main/Coverage_screenshots/housemate_coverage_screenshot.png)
+![Coverage Screenshot](https://github.com/CraigAdlam/housemate/blob/186929c7dce551191b71627a1d4ea62176b6dfc3/Coverage_screenshots/housemate_coverage_screenshot.png)
