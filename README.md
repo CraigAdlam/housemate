@@ -1,9 +1,9 @@
 # HouseMate
 
-### Build Stamp: 
+## Build Stamp: 
 ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main)
 
-#### HouseMate shows users properties to rent or purchase based on their specific needs.
+### HouseMate shows users properties to rent or purchase based on their specific needs.
 
 The HouseMate package has 2 sub-packages, which are user and property. The user sub-package contains 3 modules; userprofile.py, userlogin.py and security.py, while the property sub-package also contains 3 modules; property.py, purchase.py and rental.py. Finally, there is a standalone module called housemate.py which imports all the modules and houses the logic to make the various menus and functions flow correctly. 
 
