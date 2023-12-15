@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: HouseMate
-Version: 0.0.1
-Summary: HouseMate is tool intended guide users through the challenging task of potential home ownership.
+Version: 0.0.2
+Summary: HouseMate is a tool intended to guide users through the challenging task of potential home ownership.
 Author-email: Andrew Sarracini <andrewsarracini1@gmail.com>, Craig Adlam <cadlam87@gmail.com>
 Project-URL: Homepage, https://github.com/CraigAdlam/housemate
 Classifier: Programming Language :: Python :: 3
@@ -139,4 +139,4 @@ There are many functions within housemate.py that allow for flow including:
 
 ## Coverage: 
 
-![Coverage Screenshot](Coverage_screenshots/housemate_coverage_screenshot.png)
+![Coverage Screenshot](https://github.com/CraigAdlam/housemate/blob/186929c7dce551191b71627a1d4ea62176b6dfc3/Coverage_screenshots/housemate_coverage_screenshot.png)
