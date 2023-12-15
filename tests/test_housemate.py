@@ -11,7 +11,7 @@ import pandas as pd
 import random
 
 
-from housemate.src.housemate.housemate import (
+from src.housemate.housemate import (
     main_menu,
     profile_menu,
     housemate_menu,
@@ -23,18 +23,18 @@ from housemate.src.housemate.housemate import (
     get_file_path
 )
 
-from housemate.src.housemate.user.security import string_hash, reverse_hash, check_credentials
-from housemate.src.housemate.user.userprofile import (
+from src.housemate.user.security import string_hash, reverse_hash, check_credentials
+from src.housemate.user.userprofile import (
 #    UserProfile,
     load_user_profiles,
     create_profile_from_input,
     append_to_dataframe,
     save_dataframe_to_csv
 )
-from housemate.src.housemate.user.userlogin import view_profile, edit_profile, delete_profile
+from src.housemate.user.userlogin import view_profile, edit_profile, delete_profile
 
-from housemate.src.housemate.property.property import Property
-from housemate.src.housemate.property.purchase import (
+from src.housemate.property.property import Property
+from src.housemate.property.purchase import (
     Purchase,
     Condo,
     TownHome,
@@ -47,7 +47,7 @@ from housemate.src.housemate.property.purchase import (
     purchase_recommendation
 )
 
-from housemate.src.housemate.property.rental import (
+from src.housemate.property.rental import (
     Rental,
     RentalCondo,
     RentalTownHome,
