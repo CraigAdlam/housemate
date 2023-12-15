@@ -7,6 +7,10 @@ src/HouseMate.egg-info/PKG-INFO
 src/HouseMate.egg-info/SOURCES.txt
 src/HouseMate.egg-info/dependency_links.txt
 src/HouseMate.egg-info/top_level.txt
+src/housemate.egg-info/PKG-INFO
+src/housemate.egg-info/SOURCES.txt
+src/housemate.egg-info/dependency_links.txt
+src/housemate.egg-info/top_level.txt
 src/housemate_app/__init__.py
 src/housemate_app/housemate.py
 src/housemate_app/my_property/__init__.py
