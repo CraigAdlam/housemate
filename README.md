@@ -19,7 +19,7 @@ HouseMate/
     ├── purchase.py     
     └── rental.py       
 
-## Sub-Class: Property
+## Sub-Package: Property
 #### property.py 
 Contains the superclass Property, which instantiates various attributes for all inherited property types. 
 Attributes include: 
@@ -78,7 +78,7 @@ Subclasses of Rental:
 - RentalTwoStory
 - RentalMansion
 
-## Sub-Class: User
+## Sub-Package: User
 #### userprofile.py
 The userprofile.py module allows the user to create their profile by entering their name, age and email, as well as their chosen username and password. The username and password are encrypted using a hash function (from security.py) in order to be stored as a hash value for privacy and security reasons. There is a class UserProfile that instantiates each of the attributes (i.e, name, age etc.) and allows for retrieval from secure storage in the .csv file. 
  
