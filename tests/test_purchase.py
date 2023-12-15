@@ -5,8 +5,8 @@ import sys
 import io
 import random
 
-from src.housemate.property.property import Property
-from src.housemate.property.purchase import (
+from src.housemate_app.my_property.property import Property
+from src.housemate_app.my_property.purchase import (
     Purchase,
     Condo,
     TownHome,

@@ -6,8 +6,8 @@ import unittest
 from unittest.mock import patch
 import pandas as pd
 
-from src.housemate.user.userprofile import load_user_profiles, create_profile_from_input, append_to_dataframe, save_dataframe_to_csv
-from src.housemate.user.security import string_hash
+from src.housemate_app.user.userprofile import load_user_profiles, create_profile_from_input, append_to_dataframe, save_dataframe_to_csv
+from src.housemate_app.user.security import string_hash
 
 class TestUserProfile(unittest.TestCase):
     @classmethod

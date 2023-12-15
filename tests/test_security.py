@@ -3,7 +3,7 @@
 import unittest
 import pandas as pd
 
-from src.housemate.user.security import string_hash, reverse_hash, check_credentials
+from src.housemate_app.user.security import string_hash, reverse_hash, check_credentials
 
 class TestStringHash(unittest.TestCase):
     @classmethod

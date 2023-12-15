@@ -2,18 +2,19 @@
 
 import os
 import pandas as pd
-from .user.security import string_hash, reverse_hash, check_credentials
-from .user.userprofile import (
+
+from user.security import string_hash, reverse_hash, check_credentials
+from user.userprofile import (
 #    UserProfile,
     load_user_profiles,
     create_profile_from_input,
     append_to_dataframe,
     save_dataframe_to_csv
 )
-from .user.userlogin import view_profile, edit_profile, delete_profile
+from user.userlogin import view_profile, edit_profile, delete_profile
 
-from .property.property import Property
-from .property.purchase import (
+from my_property.property import Property
+from my_property.purchase import (
     Purchase, 
     Condo,
     TownHome,
@@ -25,7 +26,7 @@ from .property.purchase import (
     view_purchase_list,
     purchase_recommendation
 )
-from .property.rental import (
+from my_property.rental import (
     Rental,
     RentalCondo,
     RentalTownHome,

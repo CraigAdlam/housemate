@@ -6,9 +6,9 @@ from unittest.mock import patch
 from io import StringIO
 import pandas as pd
 
-from src.housemate.user.userlogin import login_get_file_path, view_profile, edit_profile, delete_profile
-from src.housemate.user.userprofile import load_user_profiles
-from src.housemate.user.security import string_hash
+from src.housemate_app.user.userlogin import login_get_file_path, view_profile, edit_profile, delete_profile
+from src.housemate_app.user.userprofile import load_user_profiles
+from src.housemate_app.user.security import string_hash
 
 class TestUserProfileLoading(unittest.TestCase):
     @classmethod
