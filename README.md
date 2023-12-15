@@ -114,14 +114,14 @@ This module allows the user to login with their created credentials by entering 
 - `login_get_file_path` -- determines the `file_path` to save the `user_profiles.csv` file for storage
 - `view_profile` -- allows the user to view their profile information - username and password are displayed as hash values
 - `edit_profile` -- allows the user to edit their profile - must re-login if the username or password are changed
-- `delete_profile` -- allow the user to delete their profile completely - exited from the profile menu to the main menu
+- `delete_profile` -- allows the user to delete their profile completely - exited from the profile menu to the main menu
 
 #### security.py
 The security.py module ensures that the sensitive user attributes, such as username and password, are encrypted using a hash function for storage and validating credentials when logging in.
  
 - `string_hash` -- converts username and password into hash values with the use of a custom hash function for encryption
 - `reverse_hash` -- converts hashed values for username and password back into the original string - for forgotten usernames or passwords
-- `check_credentials` -- utilizes the `string_hash` function above to validate login credentials with the hash values stored in the `user_profiles.csv` file
+- `check_credentials` -- validates login credentials with the hash values stored in the `user_profiles.csv` file
 
 ## Standalone Module: 
 #### housemate.py
