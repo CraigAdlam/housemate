@@ -3,13 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "housemate"
-version = "0.0.3"
+name = "housemate1"
+version = "0.0.1"
 authors = [
   { name="Andrew Sarracini", email="andrewsarracini1@gmail.com" },
   { name="Craig Adlam", email="cadlam87@gmail.com"}
 ]
-description = "HouseMate shows users properties to rent or purchase based on their specific needs." 
+description = "HouseMate shows users different properties to rent or purchase based on their specific needs." 
 readme = "README.md"
 requires-python = ">=3.6"
 classifiers = [
