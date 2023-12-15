@@ -241,17 +241,25 @@ def purchase_recommendation_main():
 
 # --------------------------------- functions end here --------------------------------- #
 
+class MaximumProfileLimitReached(Exception):
+    """Custom exception for when the maximum profile limit is reached."""
+
+    def __init__(self, message="Maximum profile limit reached (3 profiles created)."):
+        self.message = message
+        super().__init__(self.message)  # Properly initialize the Exception class
+        # print(self.message)
+
 # Flag to track successful login
 logged_in = False
 
 status = True
 
 while status == True:
-    main_menu_active = True # Setting main menu flag to true for flow control
+    main_menu_active = True  # Setting main menu flag to true for flow control
     while main_menu_active == True:
         main_menu()
         choice = input("Enter your choice (1-3): ")
-        
+
         # Load user profiles from CSV file using load_user_profiles from userprofile.py module
         user_profiles = load_user_profiles(file_path)
 
@@ -273,25 +281,24 @@ while status == True:
                     existing_df = append_to_dataframe(existing_df, user_profile_data)
                     profile_count += 1  # Increment profile count after creating a profile
 
-                    if profile_count < 3:  # Check if the maximum profile limit of 3 is not yet reached
-                        remaining_profiles = 3 - profile_count
-                        if remaining_profiles > 0:
-                            print(f"You have {remaining_profiles} profile creations remaining.")
-                        else:
-                            print("Maximum profile limit reached (3 profiles created).")
-                            break
-
-                        # Ask if the user wants to add another profile
-                        choice = input("Do you want to add another profile? (yes/no): ").lower()
-                        while choice not in ['yes', 'no']:  # Loop until valid input is received
-                            print("Please enter either yes or no.")
-                            choice = input("Do you want to add another profile? (yes/no): ").lower()
-
-                        if choice == 'no':
-                            break  # Exit profile creation loop if the user chooses 'no'
+                    remaining_profiles = 3 - profile_count
+                    if remaining_profiles > 0:
+                        print(f"You have {remaining_profiles} profile creations remaining.")
                     else:
-                        print("Maximum profile limit reached (3 profiles created).")
-                        break  # Break out of the loop after reaching the profile limit
+                        try:
+                            raise MaximumProfileLimitReached()  # Use the custom exception to print the message and skip further execution
+                        except MaximumProfileLimitReached as e:
+                            print(e)
+                            break  # Exit the loop when the maximum profile limit is reached
+
+                    # Ask if the user wants to add another profile
+                    choice = input("Do you want to add another profile? (yes/no): ").lower()
+                    while choice not in ['yes', 'no']:  # Loop until valid input is received
+                        print("Please enter either yes or no.")
+                        choice = input("Do you want to add another profile? (yes/no): ").lower()
+
+                    if choice == 'no':
+                        break  # Exit profile creation loop if the user chooses 'no'
 
                 main_menu_active = True  # Setting main menu flag to false for flow control (sent back to main menu to login)
 
