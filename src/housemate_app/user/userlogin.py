@@ -16,10 +16,21 @@ def login_get_file_path():
 file_path = login_get_file_path()
 user_profiles = load_user_profiles(file_path)
 
+# # Function to view profile information
+# def view_profile(username, df):
+#     # Hash the username input, then convert into string format for comparison
+#     hashed_username = str(string_hash(username))  # Convert the hashed values to strings
+#     user_profile = df[df['username'] == hashed_username]
+#     if not user_profile.empty:
+#         print("Profile Information:")
+#         print(user_profile)
+#     else:
+#         print("No profile information found for this user.")
+        
 # Function to view profile information
 def view_profile(username, df):
-    # Hash the username input, then convert into string format for comparison
-    hashed_username = str(string_hash(username))  # Convert the hashed values to strings
+    # Hash the username input using the same method as during profile creation
+    hashed_username = string_hash(username)
     user_profile = df[df['username'] == hashed_username]
     if not user_profile.empty:
         print("Profile Information:")
@@ -32,7 +43,7 @@ def edit_profile(username, df):
     new_value = None # Placeholder for new_value within the function scope
     
     # Hash the username input, then convert into string format for comparison
-    hashed_username = str(string_hash(username))  # Convert the hashed values to strings
+    hashed_username = string_hash(username)  # Convert the hashed values to strings
     user_profile_index = df.index[df['username'] == hashed_username].tolist()
     
     if len(user_profile_index) > 0:
@@ -65,7 +76,7 @@ def edit_profile(username, df):
 def deleter(func):
     def wrapper(username, df):
         # Hash the username input, then convert into string format for comparison
-        hashed_username = str(string_hash(username))  # Convert the hashed values to strings
+        hashed_username = string_hash(username)  # Convert the hashed values to strings
         user_profile_index = df.index[df['username'] == hashed_username].tolist()
         
         if len(user_profile_index) > 0:
@@ -85,7 +96,7 @@ def deleter(func):
 @deleter
 def delete_profile(username, df):
     # Hash the username input, then convert into string format for comparison
-    hashed_username = str(string_hash(username))  # Convert the hashed values to strings
+    hashed_username = string_hash(username)  # Convert the hashed values to strings
     user_profile_index = df.index[df['username'] == hashed_username].tolist()
     
     if len(user_profile_index) > 0:

@@ -28,22 +28,33 @@ def load_user_profiles(file_path):
 # Function to create a new profile based on user input with validation for age, email, username, and password
 def create_profile_from_input():
     profile_data = {
-        'name': input("Enter your name: "),
+        'name': None,
         'age': None,
         'email': None,
         'username': None,
         'password': None
     }
+    
+    while True:
+        name = input("Enter your name: ")
+        if ' ' not in name and 1 <= len(name) <= 133:
+            profile_data['name'] = name
+            break
+        else:
+            if ' ' in name:
+                print("Invalid name. Please avoid spaces in the name.")
+            else:
+                print("Name should be between 1 and 133 characters.")
 
     while True:
         age_input = input("Enter your age: ")
         if age_input.isdigit():
             age = int(age_input)
-            if 11 <= age <= 999:
+            if 11 <= age <= 133:
                 profile_data['age'] = age
                 break
             else:
-                print("Invalid age. Please enter an integer between 11 and 999.")
+                print("Invalid age. Please enter an integer between 11 and 133.")
         else:
             print("Invalid input. Please enter a valid integer for age.")
 

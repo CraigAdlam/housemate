@@ -241,6 +241,9 @@ def purchase_recommendation_main():
 
 # --------------------------------- functions end here --------------------------------- #
 
+# Flag to track successful login
+logged_in = False
+
 status = True
 
 while status == True:
@@ -263,17 +266,35 @@ while status == True:
                 if existing_df is None:
                     existing_df = pd.DataFrame()
 
-                # While there is a dataframe, take in the user input and concatenate to the existing dataframe
-                while True:
+                profile_count = 0  # Variable to track the number of profiles created
+
+                while profile_count < 3:  # Limit creation of profiles to a maximum of 3
                     user_profile_data = create_profile_from_input()
                     existing_df = append_to_dataframe(existing_df, user_profile_data)
+                    profile_count += 1  # Increment profile count after creating a profile
 
-                    # Ask if the user wants to add another profile
-                    choice = input("Do you want to add another profile? (yes/no): ").lower()
-                    if choice != 'yes':
-                        break
-                
-            main_menu_active = True # Setting main menu flag to false for flow control (sent back to main menu to login)
+                    if profile_count < 3:  # Check if the maximum profile limit of 3 is not yet reached
+                        remaining_profiles = 3 - profile_count
+                        if remaining_profiles > 0:
+                            print(f"You have {remaining_profiles} profile creations remaining.")
+                        else:
+                            print("Maximum profile limit reached (3 profiles created).")
+                            break
+
+                        # Ask if the user wants to add another profile
+                        choice = input("Do you want to add another profile? (yes/no): ").lower()
+                        while choice not in ['yes', 'no']:  # Loop until valid input is received
+                            print("Please enter either yes or no.")
+                            choice = input("Do you want to add another profile? (yes/no): ").lower()
+
+                        if choice == 'no':
+                            break  # Exit profile creation loop if the user chooses 'no'
+                    else:
+                        print("Maximum profile limit reached (3 profiles created).")
+                        break  # Break out of the loop after reaching the profile limit
+
+                main_menu_active = True  # Setting main menu flag to false for flow control (sent back to main menu to login)
+
         elif choice == '2':
             # User login to get to the profile menu
             # While loop to take in the username and password and match to credentials stored in CSV, if no match continues asking
@@ -292,6 +313,7 @@ while status == True:
                 
                 if check_credentials(username, password, user_profiles):
                     print("Login Successful!")
+                    logged_in = True # Set login to true to access profile menu
                     break
                 else:
                     attempts += 1
@@ -302,6 +324,7 @@ while status == True:
                         print("Maximum attempts reached. Exiting.")
                         break
             main_menu_active = False # Setting main menu flag to false for flow control (sent to the next menu)
+
         elif choice == '3':
             print("Exiting HouseMate. Have a great day!")
             status = False
@@ -311,89 +334,91 @@ while status == True:
 
     if status == False:
         break
-    
-    profile_menu_active = True # Setting the profile menu flag to true for flow control
-    while profile_menu_active == True:
-        # Profile menu after successful login
-        profile_menu()
-        choice = input("Enter your choice (1-5) or 'q' to exit HouseMate: ")
 
-        if choice == '1':
-            # View Profile Information
-            view_profile(username, user_profiles)
-        elif choice == '2':
-            # Edit Profile
-            edit_result, new_value = edit_profile(username, user_profiles)
-            if edit_result == "username_changed":
-                print("Username has been changed. Please login again.")
-                break # Exit the profile menu loop when the username or password is edited (to re login)
-            elif edit_result == "password_changed":
-                print("Password has been changed. Please login again.")
-                break # Exit the profile menu loop when the username or password is edited (to re login)
-        elif choice == '3':
-            deleted_user = delete_profile(username, user_profiles) # Utilize the decorated function
-            if string_hash(username) == deleted_user:
-                print("Profile has been deleted. Please log in again.")
-            break  # Exit the profile menu loop when the user's profile is deleted (sent to the main menu)
-        elif choice == '4':
-            housemate_menu_active = True # Setting housemate menu flag to true for flow control
-            while housemate_menu_active == True:
-                # Housemate menu for selecting recommendations or viewing all
-                housemate_menu()
-                choice = input("Enter your choice (1-5) or 'q' to exit HouseMate: ")
+    # Check login status before entering the profile menu
+    if logged_in:
+        profile_menu_active = True # Setting the profile menu flag to true for flow control
+        while profile_menu_active == True:
+            # Profile menu after successful login
+            profile_menu()
+            choice = input("Enter your choice (1-5) or 'q' to exit HouseMate: ")
 
-                if choice == '1':
-                    # Rental recommendation list based on user input
-                    print("This is showing you the recommended properties to rent")
-                    rental_recommendation_main()
-                    continue                
-                if choice == '2':
-                    # Purchase recommendation list based on user input
-                    print("This is showing you the recommended properties to purchase")
-                    purchase_recommendation_main()
-                    continue        
-                elif choice == '3':
-                    # Find a home to rent
-                    print("This is finding you a home to rent")
-                    if __name__ == "__main__":
-                        rental_main()
-                    continue
-                elif choice == '4':
-                    # Find a home to purchase
-                    print("This is finding you a home to purchase")
-                    if __name__ == "__main__":
-                        purchase_main()
-                    continue
-                elif choice == '5':
-                    # Return to the main menu
-                    print("This is returning to the profile menu")
-                    housemate_menu_active = False # Setting housemate menu flag to false for flow control (sent to profile menu)
-                elif choice == '6':
-                    # Logout and return to the main menu
-                    print("This is returning to the main menu")
-                    housemate_menu_active = False # Setting housemate menu flag to false for flow control (sent to profile menu)
-                    profile_menu_active = False # Setting profile menu flag to false for flow control (sent to the main menu)
-                elif choice.lower() == 'q':
-                    # Exit HouseMate when 'q' is entered (exits application)
-                    print("Exiting HouseMate. Have a great day!")
-                    status = False
-                    housemate_menu_active = False # Setting housemate menu flag to false for flow control
-                    profile_menu_active = False # Setting profile menu flag to false for flow control
-                    main_menu_active = False # Setting main menu flag to false for flow control
-                else:
-                    print("Invalid choice. Please enter a number between 1 and 5 or 'q' to exit HouseMate.")
-        elif choice == '5':
-            # Logout and return to the main menu
-            print("This is returning to the main menu.")
-            break  # Exit the menu loop when logging out
-        elif choice.lower() == 'q':
-            print("Exiting HouseMate. Have a great day!")
-            status = False
-            break  # Exit HouseMate when 'q' is entered (exits application)
-        else:
-            print("Invalid choice. Please enter a number between 1 and 5 or 'q' to exit HouseMate.")
-    
-    if status == False:
-        break # Exit the outer while loop when the user chooses to exit HouseMate
+            if choice == '1':
+                # View Profile Information
+                view_profile(username, user_profiles)
+            elif choice == '2':
+                # Edit Profile
+                edit_result, new_value = edit_profile(username, user_profiles)
+                if edit_result == "username_changed":
+                    print("Username has been changed. Please login again.")
+                    break # Exit the profile menu loop when the username or password is edited (to re login)
+                elif edit_result == "password_changed":
+                    print("Password has been changed. Please login again.")
+                    break # Exit the profile menu loop when the username or password is edited (to re login)
+            elif choice == '3':
+                deleted_user = delete_profile(username, user_profiles) # Utilize the decorated function
+                if string_hash(username) == deleted_user:
+                    print("Profile has been deleted. Please log in again.")
+                break  # Exit the profile menu loop when the user's profile is deleted (sent to the main menu)
+            elif choice == '4':
+                housemate_menu_active = True # Setting housemate menu flag to true for flow control
+                while housemate_menu_active == True:
+                    # Housemate menu for selecting recommendations or viewing all
+                    housemate_menu()
+                    choice = input("Enter your choice (1-5) or 'q' to exit HouseMate: ")
+
+                    if choice == '1':
+                        # Rental recommendation list based on user input
+                        print("This is showing you the recommended properties to rent")
+                        rental_recommendation_main()
+                        continue                
+                    if choice == '2':
+                        # Purchase recommendation list based on user input
+                        print("This is showing you the recommended properties to purchase")
+                        purchase_recommendation_main()
+                        continue        
+                    elif choice == '3':
+                        # Find a home to rent
+                        print("This is finding you a home to rent")
+                        if __name__ == "__main__":
+                            rental_main()
+                        continue
+                    elif choice == '4':
+                        # Find a home to purchase
+                        print("This is finding you a home to purchase")
+                        if __name__ == "__main__":
+                            purchase_main()
+                        continue
+                    elif choice == '5':
+                        # Return to the main menu
+                        print("This is returning to the profile menu")
+                        housemate_menu_active = False # Setting housemate menu flag to false for flow control (sent to profile menu)
+                    elif choice == '6':
+                        # Logout and return to the main menu
+                        print("This is returning to the main menu")
+                        housemate_menu_active = False # Setting housemate menu flag to false for flow control (sent to profile menu)
+                        profile_menu_active = False # Setting profile menu flag to false for flow control (sent to the main menu)
+                    elif choice.lower() == 'q':
+                        # Exit HouseMate when 'q' is entered (exits application)
+                        print("Exiting HouseMate. Have a great day!")
+                        status = False
+                        housemate_menu_active = False # Setting housemate menu flag to false for flow control
+                        profile_menu_active = False # Setting profile menu flag to false for flow control
+                        main_menu_active = False # Setting main menu flag to false for flow control
+                    else:
+                        print("Invalid choice. Please enter a number between 1 and 5 or 'q' to exit HouseMate.")
+            elif choice == '5':
+                # Logout and return to the main menu
+                print("This is returning to the main menu.")
+                break  # Exit the menu loop when logging out
+            elif choice.lower() == 'q':
+                print("Exiting HouseMate. Have a great day!")
+                status = False
+                break  # Exit HouseMate when 'q' is entered (exits application)
+            else:
+                print("Invalid choice. Please enter a number between 1 and 5 or 'q' to exit HouseMate.")
+        
+        if status == False:
+            break # Exit the outer while loop when the user chooses to exit HouseMate
     
     

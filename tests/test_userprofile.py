@@ -31,7 +31,7 @@ class TestUserProfile(unittest.TestCase):
     def test_create_profile_from_input(self):
         # Simulate creating a user profile from user input
         profile_data = {
-            'name': 'User 1',
+            'name': 'User1',
             'age': 25,
             'email': 'user1@example.com',
             'username': 'username1',  # Keeping the original username and password
@@ -82,7 +82,7 @@ class TestAppendToDataFrame(unittest.TestCase):
     def setUpClass(cls):
         # Set up initial data for testing append_to_dataframe function
         cls.initial_data = {
-            'name': ['User 1'],
+            'name': ['User1'],
             'age': [25],
             'email': ['user1@example.com'],
             'username': ['username1'],
@@ -96,7 +96,7 @@ class TestAppendToDataFrame(unittest.TestCase):
     def test_append_to_dataframe(self):
         # Append a new profile to the existing dataframe
         new_profile_data = {
-            'name': 'User 2',
+            'name': 'User2',
             'age': 30,
             'email': 'user2@example.com',
             'username': 'username2',
@@ -122,7 +122,7 @@ class TestSaveDataFrameToCSV(unittest.TestCase):
     def setUpClass(cls):
         # Set up initial data for testing save_dataframe_to_csv function
         cls.test_data = {
-            'name': ['User 1'],
+            'name': ['User1'],
             'age': [25],
             'email': ['user1@example.com'],
             'username': ['username1'],
