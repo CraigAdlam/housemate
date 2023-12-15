@@ -5,19 +5,31 @@
 
 The HouseMate package has 2 sub-packages, which are user and property. The user sub-package contains 3 modules; userprofile.py, userlogin.py and security.py, while the property sub-package also contains 3 modules; property.py, purchase.py and rental.py. Finally, there is a standalone module called housemate.py which imports all the modules and houses the logic to make the various menus and functions flow correctly. 
 
-HouseMate/
+housemate/
 ├── __init__.py
-├── housemate.py        
-├── user/               
+├── src/
 │   ├── __init__.py
-│   ├── userprofile.py  
-│   ├── userlogin.py    
-│   └── security.py     
-└── property/           
+│   ├── housemate_app/
+│   │   ├── __init__.py
+│   │   ├── user/
+│   │   │   ├── __init__.py
+│   │   │   ├── userprofile.py
+│   │   │   ├── userlogin.py
+│   │   │   └── security.py
+│   │   └── property/
+│   │       ├── __init__.py
+│   │       ├── property.py
+│   │       ├── purchase.py
+│   │       └── rental.py
+└── tests/
     ├── __init__.py
-    ├── property.py     
-    ├── purchase.py     
-    └── rental.py       
+    ├── test_housemate.py
+    ├── test_userprofile.py
+    ├── test_userlogin.py
+    ├── test_security.py
+    ├── test_property.py
+    ├── test_purchase.py
+    └── test_rental.py    
 
 ## Sub-Package: Property
 #### property.py 
