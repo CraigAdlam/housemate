@@ -98,29 +98,30 @@ Subclasses of Rental:
 #### userprofile.py
 The userprofile.py module allows the user to create their profile by entering their name, age and email, as well as their chosen username and password. The username and password are encrypted using a hash function (from security.py) in order to be stored as a hash value for privacy and security reasons. There is a class UserProfile that instantiates each of the attributes (i.e, name, age etc.) and allows for retrieval from secure storage in the .csv file. 
  
-- `load_user_profiles` -- used to load the user profiles, which are stored in a CSV file locally. If there is no `file_path` to the CSV file, none will be returned
-- `create_profile_from_input` -- used to create the profile for the user based on user input. The following restrictions are in place:
-- `age_input` -- must be between 11 and 999 and an integer only
-- `email` -- using regular expressions to form a defined pattern, there must be alphanumeric characters before the @ symbol as well as in between @ and .com
-- `username` -- must be between 8 and 33 characters without the use of spaces
-- `password` -- must be between 8 and 133 characters without the use of spaces
-- `append_to_dataframe` -- used to concatenate the new user defined attributes into a dataframe. If there is no dataframe, there will be one created.
-- `save_dataframe_to_csv` -- used to save the dataframe that was created and/or concatenated to, and be saved locally as per the `file_path`
+- `load_user_profiles` -- loads the user profiles, which are stored in a CSV file locally. If there is no `file_path` to the `user_profiles.csv` file, none will be returned
+- `create_profile_from_input` -- creates a profile for the user based on user input. The following restrictions are in place:
+    - name -- must be between 11 and 133 characters and contain no spaces
+    - age_input -- must be between 11 and 133 and an integer only
+    - email -- must be alphanumeric characters before the @ symbol as well as in between @ and .com
+    - username -- must be between 8 and 33 characters and contain no spaces
+    - password -- must be between 8 and 133 characters and contain no spaces
+- `append_to_dataframe` -- adds the user's profile information into a dataframe - if there is no dataframe, one is created
+- `save_dataframe_to_csv` -- saves the dataframe into the `user_profiles.csv` file located in the current working directory
  
 #### userlogin.py
 This module allows the user to login with their created credentials by entering their username and password. These credentials are then encrypted with a hash function to be matched with the hash values that were stored after creating the profile. 
  
-- `login_get_file_path` -- used to determine the `file_path` in which the `user_profiles.csv` file will be stored
-- `view_profile` -- used to allow the user to view the profile that they have created in the form of a dataframe with only their profile attributes (i.e., name, age etc.), in which the username and password are displayed as the corresponding hash value
-- `edit_profile` -- used to allow the user to edit attributes in the profile by allowing them to select which attribute to edit. If either the username or password are edited, the user is exited to the main menu to login with the newly created credentials
-- `delete_profile` -- used to allow the user to delete their profile completely from the dataframe and CSV, in which they are exited from the profile menu to the main menu
+- `login_get_file_path` -- determines the `file_path` in which the `user_profiles.csv` file will be stored
+- `view_profile` -- allows the user to view their profile information (i.e., name, age etc.) - username and password are displayed as hash values
+- `edit_profile` -- allows the user to edit their profile by selecting which attribute to edit - user is exited to the main menu to login if the username or password are changed
+- `delete_profile` -- allow the user to delete their profile completely from the dataframe and CSV, in which they are exited from the profile menu to the main menu
 
 #### security.py
-The security.py module ensures that the sensitive user attributes, such as username and password, are encrypted using a hash function as well as checked when logging in.
+The security.py module ensures that the sensitive user attributes, such as username and password, are encrypted using a hash function for storage and validating credentials when logging in.
  
-- `stringHash` -- takes in the username and password strings, which are then enumerated and multiplied by the corresponding ordinal value for each character to equal a single, summed hash value
-- `reverseHash` -- takes in the hashed values for username and password to be reversed into the original string in case of forgotten usernames or passwords (on the back end)
-- `check_credentials` -- utilizes the `stringHash` function above to convert the entered login credentials (i.e., username and password) into the corresponding hash value to be matched with the hash value stored in the CSV
+- `stringHash` -- converts the username and password into hash values with the use of a custom hash function for encryption
+- `reverseHash` -- converts the hashed values for username and password back into the original string in case of forgotten usernames or passwords (on the back end)
+- `check_credentials` -- utilizes the `string_hash` function above to validate login credentials (i.e., username and password) by matching the converted hash value with the hash value stored in the `user_profiles.csv` file
 
 ## Standalone Module: 
 #### housemate.py
@@ -129,16 +130,14 @@ Main functionalities include:
 - Menu management and control of flow, applies to: 
   - user profile functionalities
   - authentication 
-  - Property viewing
-  - Property recommending
+  - property viewing
+  - property recommendations
  
-There are many functions within housemate.py that allow for flow including: 
+There are many functions within housemate.py that control the flow including: 
 - Menu functions: allow for users to select options based on prompts
    - `main_menu`, `profile_menu`, `housemate_menu`
-- Mapping functions: allow for user-friendly input 
+- Mapping functions: allows for user-friendly input 
    - `purchase_main`, `rental_main`, `purchase_recommendation_main`, `renatl_recommendation_main`
- 
-- Also note, housemate.py protects against all user input from invalid characters and character lengths. In the case of email, only a certain pattern will be accepted ("example@email.com")
 
 ## Coverage: 
 
