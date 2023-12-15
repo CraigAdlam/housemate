@@ -22,6 +22,7 @@ if __name__ == '__main__':
     # Create a test suite
     test_suite = unittest.TestSuite()
     result = unittest.TestResult()
+    
     test_suite.addTest(unittest.makeSuite(TestUserProfile))
     test_suite.addTest(unittest.makeSuite(TestAppendToDataFrame))
     test_suite.addTest(unittest.makeSuite(TestSaveDataFrameToCSV))
