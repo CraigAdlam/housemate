@@ -8,6 +8,8 @@ The HouseMate package has 2 sub-packages, which are user and property. The user 
 ```
 housemate/
 ├── __init__.py
+├── housemate.py
+├── housemate_test_suite.py
 ├── src/
 │   ├── __init__.py
 │   ├── housemate_app/
@@ -30,7 +32,7 @@ housemate/
     ├── test_security.py
     ├── test_property.py
     ├── test_purchase.py
-    └── test_rental.py    
+    └── test_rental.py   
 ```
 
 ## Sub-Package: Property
