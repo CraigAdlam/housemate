@@ -18,19 +18,19 @@ housemate/
 ├── housemate_test_suite.py
 ├── src/
 │   ├── __init__.py
-│   ├── housemate_app/
-│   │   ├── __init__.py
-│   │   ├── housemate_main.py
-│   │   ├── user/
-│   │   │   ├── __init__.py
-│   │   │   ├── userprofile.py
-│   │   │   ├── userlogin.py
-│   │   │   └── security.py
-│   │   └── my_property/
-│   │       ├── __init__.py
-│   │       ├── property.py
-│   │       ├── purchase.py
-│   │       └── rental.py
+│   └── housemate_app/
+│       ├── __init__.py
+│       ├── housemate_main.py
+│       ├── user/
+│       │   ├── __init__.py
+│       │   ├── userprofile.py
+│       │   ├── userlogin.py
+│       │   └── security.py
+│       └── my_property/
+│           ├── __init__.py
+│           ├── property.py
+│           ├── purchase.py
+│           └── rental.py
 └── tests/
     ├── __init__.py
     ├── test_housemate.py
