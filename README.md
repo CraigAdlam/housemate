@@ -4,7 +4,7 @@
 ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main)
 
 ## Housemate Video:
-![Housemate Video](https://drive.google.com/file/d/1tE8sHdJwWeAFQppdCrX0RvgBOVTyVCrF/view?usp=drive_link)
+![Housemate Video](https://drive.google.com/file/d/1YHYfoSaAvnLVRI-pUc28S_QYX4kC1WNh/view?usp=drive_link)
 
 ### The HouseMate app shows users different properties to rent or purchase based on their specific needs.
 
