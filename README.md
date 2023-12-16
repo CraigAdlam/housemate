@@ -1,10 +1,10 @@
-# ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main "Travis CI Build Stamp")
+# ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main "Travis CI Build Stamp") [![Coverage Report](img/coverage_slim.png)](#coverage-report)
 
 # HouseMate
 ### The HouseMate app shows users different properties to rent or purchase based on their specific needs.
 
 ## Housemate Video  
-[![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link "HouseMate Video")
+[![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link "HouseMate Video") 
 ## Commands from the Video:
 - `pip install housemate` - installs housemate package to local python directories (e.g., c:\users\user1\anaconda3\lib\site-packages\)
 - `pip show housemate` - shows the application name, current version installed, summary, authors, and installation location
@@ -149,6 +149,5 @@ There are many functions within housemate.py that control the flow including:
 - Mapping functions: allows for user-friendly input 
    - `purchase_main`, `rental_main`, `purchase_recommendation_main`, `rental_recommendation_main`
 
-## Coverage: 
-
+## Coverage Report <a name="coverage-report"></a> 
 ![Coverage Screenshot](https://github.com/CraigAdlam/housemate/blob/186929c7dce551191b71627a1d4ea62176b6dfc3/Coverage_screenshots/housemate_coverage_screenshot.png)
