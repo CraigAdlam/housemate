@@ -1,4 +1,4 @@
-# ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main "Travis CI Build Stamp") [![Coverage Report](img/coverage_slim.png)](#coverage-report)
+# ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main "Travis CI Build Stamp") [![Coverage Report](img/coverage_slim2.png)](#coverage-report)
 
 # HouseMate
 ### The HouseMate app shows users different properties to rent or purchase based on their specific needs.
