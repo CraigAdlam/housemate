@@ -146,4 +146,4 @@ There are many functions within housemate.py that control the flow including:
    - `purchase_main`, `rental_main`, `purchase_recommendation_main`, `rental_recommendation_main`
 
 ## Coverage Report <a name="coverage-report"></a> 
-![Coverage Screenshot](https://github.com/CraigAdlam/housemate/blob/186929c7dce551191b71627a1d4ea62176b6dfc3/Coverage_screenshots/housemate_coverage_screenshot.png)
+![Coverage Screenshot](coverage_full.png)
