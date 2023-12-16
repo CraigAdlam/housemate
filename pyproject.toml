@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "housemate"
-version = "2.4"
+version = "2.5"
 authors = [
   { name="Andrew Sarracini", email="andrewsarracini1@gmail.com" },
   { name="Craig Adlam", email="cadlam87@gmail.com"}
