@@ -1,6 +1,7 @@
-    # housemate_main.py module
+# housemate_main.py module
 
-if __name__ == "__main__":
+def run_housemate_app():
+
     import os
     import pandas as pd
 
@@ -428,5 +429,8 @@ if __name__ == "__main__":
             
             if status == False:
                 break # Exit the outer while loop when the user chooses to exit HouseMate
+            
+if __name__ == "__main__":
+    run_housemate_app()
         
         
