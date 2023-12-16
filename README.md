@@ -6,6 +6,10 @@
 
 ## Housemate Video:
 [![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link)
+## Commands from the Video:
+- `pip install housemate` - installs the housemate package into your local python directories (e.g., c:\users\user1\anaconda3\lib\site-packages\)
+- `pip show housemate` - shows the application name, current version installed, summary, authors, and installation location
+- `python -m housemate_app.housemate_main` - executes the main file in the housemate package to guide you through the menus
 
 The HouseMate package has 2 sub-packages, which are user and property. The user sub-package contains 3 modules; userprofile.py, userlogin.py and security.py, while the property sub-package also contains 3 modules; property.py, purchase.py and rental.py. Finally, there is a standalone module called housemate.py which imports all the modules and houses the logic to make the various menus and functions flow correctly. 
 
