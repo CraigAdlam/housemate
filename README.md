@@ -4,8 +4,8 @@
 ## Build Stamp  
 ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main "Travis CI Build Stamp")
 
-## PyPi  
-[![PyPi](img/pypi_logo.png)](https://pypi.org/project/housemate/2.5/)
+## PyPi Link 
+[![PyPi Link](img/pypi_logo.png)](https://pypi.org/project/housemate/2.5/)
 
 ## Housemate Video  
 [![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link "HouseMate Video")
