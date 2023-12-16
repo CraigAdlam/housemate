@@ -8,6 +8,7 @@ src/housemate.egg-info/SOURCES.txt
 src/housemate.egg-info/dependency_links.txt
 src/housemate.egg-info/top_level.txt
 src/housemate_app/__init__.py
+src/housemate_app/housemate_main.py
 src/housemate_app/my_property/__init__.py
 src/housemate_app/my_property/property.py
 src/housemate_app/my_property/purchase.py

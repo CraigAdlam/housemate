@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "housemate"
-version = "2.0"
+version = "2.2"
 authors = [
   { name="Andrew Sarracini", email="andrewsarracini1@gmail.com" },
   { name="Craig Adlam", email="cadlam87@gmail.com"}
@@ -22,4 +22,4 @@ classifiers = [
 Homepage = "https://github.com/CraigAdlam/housemate"
 
 [tool.poetry.scripts]
-housemate_main = "housemate.housemate_main:main"
+housemate_main = "housemate_app.housemate_main:main"
