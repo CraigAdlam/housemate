@@ -7,7 +7,7 @@
 ## Housemate Video:
 [![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link)
 ## Commands from the Video:
-- `pip install housemate` - installs the housemate package into your local python directories (e.g., c:\users\user1\anaconda3\lib\site-packages\)
+- `pip install housemate` - installs housemate package to local python directories (e.g., c:\users\user1\anaconda3\lib\site-packages\)
 - `pip show housemate` - shows the application name, current version installed, summary, authors, and installation location
 - `python -m housemate_app.housemate_main` - executes the main file in the housemate package to guide you through the menus
 
