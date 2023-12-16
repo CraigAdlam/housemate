@@ -1,11 +1,14 @@
 # HouseMate
 ### The HouseMate app shows users different properties to rent or purchase based on their specific needs.
 
-## Build Stamp: 
-![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main)
+## Build Stamp  
+![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main "Travis CI Build Stamp")
 
-## Housemate Video:
-[![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link)
+## PyPi  
+[![PyPi](img/pypi_logo.png)](https://pypi.org/project/housemate/2.5/)
+
+## Housemate Video  
+[![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link "HouseMate Video")
 ## Commands from the Video:
 - `pip install housemate` - installs housemate package to local python directories (e.g., c:\users\user1\anaconda3\lib\site-packages\)
 - `pip show housemate` - shows the application name, current version installed, summary, authors, and installation location
