@@ -1,12 +1,11 @@
 # HouseMate
+### The HouseMate app shows users different properties to rent or purchase based on their specific needs.
 
 ## Build Stamp: 
 ![Travis CI Build Stamp](https://app.travis-ci.com/CraigAdlam/housemate.svg?branch=main)
 
 ## Housemate Video:
 [![HouseMate Video](img/housemate_picture.png)](https://drive.google.com/file/d/12ogu1G4d1A6hkvmxftLqHi-QRhryyvsX/view?usp=drive_link)
-
-### The HouseMate app shows users different properties to rent or purchase based on their specific needs.
 
 The HouseMate package has 2 sub-packages, which are user and property. The user sub-package contains 3 modules; userprofile.py, userlogin.py and security.py, while the property sub-package also contains 3 modules; property.py, purchase.py and rental.py. Finally, there is a standalone module called housemate.py which imports all the modules and houses the logic to make the various menus and functions flow correctly. 
 
