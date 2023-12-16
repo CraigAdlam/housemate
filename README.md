@@ -15,18 +15,18 @@ The HouseMate package has 2 sub-packages, which are user and property. The user 
 ```
 housemate/
 ├── __init__.py
-├── housemate.py
 ├── housemate_test_suite.py
 ├── src/
 │   ├── __init__.py
 │   ├── housemate_app/
 │   │   ├── __init__.py
+│   │   ├── housemate_main.py
 │   │   ├── user/
 │   │   │   ├── __init__.py
 │   │   │   ├── userprofile.py
 │   │   │   ├── userlogin.py
 │   │   │   └── security.py
-│   │   └── property/
+│   │   └── my_property/
 │   │       ├── __init__.py
 │   │       ├── property.py
 │   │       ├── purchase.py
@@ -37,7 +37,6 @@ housemate/
     ├── test_userprofile.py
     ├── test_userlogin.py
     ├── test_security.py
-    ├── test_property.py
     ├── test_purchase.py
     └── test_rental.py   
 ```
