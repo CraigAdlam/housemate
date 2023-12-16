@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: housemate
-Version: 0.0.3
-Summary: HouseMate shows users properties to rent or purchase based on their specific needs.
+Version: 1.5
+Summary: HouseMate shows users different properties to rent or purchase based on their specific needs.
 Author-email: Andrew Sarracini <andrewsarracini1@gmail.com>, Craig Adlam <cadlam87@gmail.com>
 Project-URL: Homepage, https://github.com/CraigAdlam/housemate
 Classifier: Programming Language :: Python :: 3
